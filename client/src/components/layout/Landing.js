@@ -23,10 +23,7 @@ class Landing extends Component {
               className="responsive-img credit-card"
               alt="Undraw"
             />
-            <h4 className="flow-text">
-              <b>Build</b> a personal banking web app with Plaid and the{" "}
-              <span style={{ fontFamily: "monospace" }}>MERN</span> stack
-            </h4>
+            <h4>The best application to manage your retirement pension</h4>
             <br />
             <div className="col s6">
               <Link

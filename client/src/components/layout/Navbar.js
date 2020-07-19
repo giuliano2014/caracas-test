@@ -14,7 +14,7 @@ class Navbar extends Component {
               }}
               className="col s5 brand-logo center black-text"
             >
-              Caracas
+              { process.env.REACT_APP_CLIENT_NAME }
             </Link>
           </div>
         </nav>

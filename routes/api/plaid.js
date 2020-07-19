@@ -17,7 +17,7 @@ const client = new plaid.Client(
   PLAID_CLIENT_ID,
   PLAID_SECRET,
   PLAID_PUBLIC_KEY,
-  plaid.environments.sandbox,
+  process.env.PLAID_ENV === 'sandbox' ? plaid.environments.sandbox : plaid.environments.production,
   { version: "2018-05-22" }
 );
 

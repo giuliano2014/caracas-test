@@ -113,8 +113,10 @@ class Accounts extends Component {
             plaidLinkProps={{
               clientName: process.env.REACT_APP_CLIENT_NAME,
               key: process.env.REACT_APP_PLAID_PUBLIC_KEY,
-              env: "sandbox",
-              product: ["transactions"],
+              env: process.env.REACT_APP_PLAID_ENV,
+              product: [process.env.REACT_APP_PLAID_PRODUCTS],
+              language: process.env.REACT_APP_PLAID_LANGUAGE,
+              countryCodes: process.env.REACT_APP_PLAID_COUNTRY_CODES,
               onSuccess: this.handleOnSuccess
             }}
             onScriptLoad={() => this.setState({ loaded: true })}
