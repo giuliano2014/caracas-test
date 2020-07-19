@@ -1,74 +1,41 @@
-# mern-plaid
+# Caracas Test
 
-![Final App](https://i.postimg.cc/tJYRKQPR/mern-Plaid-Final.gif)
-Full-stack banking web app built with [Plaid's API](https://plaid.com) and the MERN stack.
+![Caracas Test Demo](caracas-test-demo.gif)
 
 This project uses the following technologies:
 
-- [React](https://reactjs.org) and [React Router](https://reacttraining.com/react-router/) for the frontend
+- [React](https://reactjs.org) and [Redux](https://redux.js.org/basics/usagewithreact) for the frontend
 - [Express](http://expressjs.com/) and [Node](https://nodejs.org/en/) for the backend
 - [MongoDB](https://www.mongodb.com/) for the database
-- [Redux](https://redux.js.org/basics/usagewithreact) for global state management
 - [Plaid](https://plaid.com) for bank account linkage and transaction data
 
-## Medium Post
+## I bootstappred Caracas Test in following this article, on Medium
 
 - [Build a Full Stack Banking Web App with Plaid & the MERN Stack](https://medium.com/@rishipr/build-a-fullstack-banking-web-app-with-plaid-the-mern-stack-508914ce5694)
 
-## Configuration
-
-### Mongo
-
-Make sure to add your own `MONGOURI` from your [mLab](https://mlab.com) database in `config/keys.js`.
+## Quick Start to test the demo
 
 ```javascript
-module.exports = {
-  mongoURI: "YOUR_MONGO_URI_HERE",
-  secretOrKey: "secret"
-};
-```
+// First
+git clone https://github.com/giuliano2014/caracas-test.git
 
-### Plaid
+// Second
+cd caracas-test
 
-Also, add your own [Plaid API](https://plaid.com) keys (`PLAID_CLIENT_ID`, `PLAID_SECRET`, and `PLAID_PUBLIC_KEY`) in
+// Create 2 .env files with the following CLI
+touch .env client/.env
+send me an email (g.furgol@gmail.com), so that I can give you the variables to copy/paste in your .env files
 
-1. `routes/api/plaid.js`
-
-```
-const PLAID_CLIENT_ID = "YOUR_CLIENT_ID";
-const PLAID_SECRET = "YOUR_SECRET";
-const PLAID_PUBLIC_KEY = "YOUR_PUBLIC_KEY";
-```
-
-2. `client/src/components/dashboard/Dashboard.js` and `client/src/components/dashboard/Accounts.js`
-
-```
-<PlaidLinkButton
-                buttonProps={{
-                  className:
-                    "btn btn-large waves-effect waves-light hoverable blue accent-3 main-btn"
-                }}
-                plaidLinkProps={{
-                  clientName: "YOUR_APP_NAME",
-                  key: "YOUR_PUBLIC_KEY",
-                  env: "sandbox",
-                  product: ["transactions"],
-                  onSuccess: this.handleOnSuccess
-                }}
-                onScriptLoad={() => this.setState({ loaded: true })}
-              >
-                Link Account
-              </PlaidLinkButton>
-```
-
-## Quick Start
-
-```javascript
 // Install dependencies for server & client
 npm install && npm run client-install
 
 // Run client & server with concurrently
 npm run dev
 
-// Server runs on http://localhost:5000 and client on http://localhost:3000
+// If you have this kind of error => Error: listen EADDRINUSE :::5000, copy/paste the following CLI
+killall -9 node
+ps ax
+npm run dev
+
+// Client runs on http://localhost:3000 and server on http://localhost:5000
 ```
